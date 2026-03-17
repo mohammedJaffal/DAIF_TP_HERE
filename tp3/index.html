@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TP3 - Site vitrine multi-pages d'une entreprise fictive">
+  <meta property="og:title" content="TP3 - Site vitrine Nova Studio">
+  <meta property="og:description" content="Exemple de site vitrine multi-pages en HTML/CSS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://c3-az-daaif.enset.ma/tp3">
+  <meta property="og:image" content="https://c3-az-daaif.enset.ma/images/hero-1200.svg">
+  <title>TP3 - Accueil | Nova Studio</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Nova Studio</h1>
+      <p>Agence web fictive - site vitrine TP3.</p>
+      <nav class="main-nav" aria-label="Navigation TP3">
+        <ul>
+          <li><a href="/">Accueil TP</a></li>
+          <li><a class="active" href="/tp3">Home</a></li>
+          <li><a href="/tp3/about.html">About</a></li>
+          <li><a href="/tp3/services.html">Services</a></li>
+          <li><a href="/tp3/gallery.html">Gallery</a></li>
+          <li><a href="/tp3/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="section hero">
+        <div>
+          <h2>Créer des sites web clairs et efficaces</h2>
+          <p>Nova Studio accompagne les petites entreprises avec des solutions web simples, modernes et accessibles.</p>
+          <p class="note">Objectif du TP: démontrer une structure multi-pages complète avec HTML5 + CSS de base.</p>
+        </div>
+        <picture>
+          <source media="(min-width: 760px)" srcset="/images/hero-1200.svg">
+          <img
+            src="/images/hero-640.svg"
+            srcset="/images/hero-640.svg 640w, /images/hero-1200.svg 1200w"
+            sizes="(min-width: 760px) 45vw, 100vw"
+            alt="Illustration hero représentant le studio Nova">
+        </picture>
+      </section>
+
+      <section class="section">
+        <h2>Nos services</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Création de site</h3>
+            <p>Sites vitrines rapides et responsives pour lancer votre présence en ligne.</p>
+          </article>
+          <article class="card">
+            <h3>Refonte UI</h3>
+            <p>Amélioration de l'interface et de l'expérience utilisateur sur vos pages existantes.</p>
+          </article>
+          <article class="card">
+            <h3>Maintenance</h3>
+            <p>Mises à jour, corrections et suivi de performance pour sécuriser votre site.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Vidéo de présentation</h2>
+        <video autoplay muted loop playsinline controls>
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la vidéo HTML5.
+        </video>
+      </section>
+
+      <section class="section">
+        <h2>Témoignages</h2>
+        <blockquote>
+          "Projet livré rapidement, communication claire et résultat propre." - Client A
+        </blockquote>
+        <blockquote>
+          "Notre nouveau site est plus lisible sur mobile." - Client B
+        </blockquote>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>Plan du site</strong>
+      <ul>
+        <li><a href="/tp3">Accueil</a></li>
+        <li><a href="/tp3/about.html">À propos</a></li>
+        <li><a href="/tp3/services.html">Services</a></li>
+        <li><a href="/tp3/gallery.html">Galerie</a></li>
+        <li><a href="/tp3/contact.html">Contact</a></li>
+      </ul>
+      <p>Mentions légales: site démonstration pédagogique, sans activité commerciale réelle.</p>
+    </div>
+  </footer>
+</body>
+</html>

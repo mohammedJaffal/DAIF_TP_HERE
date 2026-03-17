@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TP3 - Galerie responsive avec picture et srcset">
+  <meta property="og:title" content="TP3 - Galerie Nova Studio">
+  <meta property="og:description" content="Exemple de galerie d'images responsive.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://c3-az-daaif.enset.ma/tp3/gallery.html">
+  <meta property="og:image" content="https://c3-az-daaif.enset.ma/images/gallery-1-960.svg">
+  <title>TP3 - Galerie | Nova Studio</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Nova Studio</h1>
+      <p>Galerie du studio</p>
+      <nav class="main-nav" aria-label="Navigation TP3">
+        <ul>
+          <li><a href="/">Accueil TP</a></li>
+          <li><a href="/tp3">Home</a></li>
+          <li><a href="/tp3/about.html">About</a></li>
+          <li><a href="/tp3/services.html">Services</a></li>
+          <li><a class="active" href="/tp3/gallery.html">Gallery</a></li>
+          <li><a href="/tp3/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <h2>Galerie responsive</h2>
+        <div class="gallery-grid">
+          <figure>
+            <picture>
+              <source media="(min-width: 760px)" srcset="/images/gallery-1-960.svg">
+              <img src="/images/gallery-1-480.svg" srcset="/images/gallery-1-480.svg 480w, /images/gallery-1-960.svg 960w" sizes="(min-width: 760px) 30vw, 100vw" alt="Projet site restaurant">
+            </picture>
+            <figcaption>Projet restaurant</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source media="(min-width: 760px)" srcset="/images/gallery-2-960.svg">
+              <img src="/images/gallery-2-480.svg" srcset="/images/gallery-2-480.svg 480w, /images/gallery-2-960.svg 960w" sizes="(min-width: 760px) 30vw, 100vw" alt="Projet e-commerce local">
+            </picture>
+            <figcaption>Projet e-commerce</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source media="(min-width: 760px)" srcset="/images/gallery-3-960.svg">
+              <img src="/images/gallery-3-480.svg" srcset="/images/gallery-3-480.svg 480w, /images/gallery-3-960.svg 960w" sizes="(min-width: 760px) 30vw, 100vw" alt="Projet page événementielle">
+            </picture>
+            <figcaption>Landing page événement</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>Plan du site</strong>
+      <ul>
+        <li><a href="/tp3">Accueil</a></li>
+        <li><a href="/tp3/about.html">À propos</a></li>
+        <li><a href="/tp3/services.html">Services</a></li>
+        <li><a href="/tp3/gallery.html">Galerie</a></li>
+        <li><a href="/tp3/contact.html">Contact</a></li>
+      </ul>
+      <p>Mentions légales: site démonstration pédagogique, sans activité commerciale réelle.</p>
+    </div>
+  </footer>
+</body>
+</html>

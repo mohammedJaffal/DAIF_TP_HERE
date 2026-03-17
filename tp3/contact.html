@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TP3 - Contact Nova Studio">
+  <meta property="og:title" content="TP3 - Contact Nova Studio">
+  <meta property="og:description" content="Formulaire de contact et carte intégrée.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://c3-az-daaif.enset.ma/tp3/contact.html">
+  <meta property="og:image" content="https://c3-az-daaif.enset.ma/images/hero-640.svg">
+  <title>TP3 - Contact | Nova Studio</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Nova Studio</h1>
+      <p>Contactez-nous</p>
+      <nav class="main-nav" aria-label="Navigation TP3">
+        <ul>
+          <li><a href="/">Accueil TP</a></li>
+          <li><a href="/tp3">Home</a></li>
+          <li><a href="/tp3/about.html">About</a></li>
+          <li><a href="/tp3/services.html">Services</a></li>
+          <li><a href="/tp3/gallery.html">Gallery</a></li>
+          <li><a class="active" href="/tp3/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="section">
+        <h2>Formulaire de contact</h2>
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div>
+              <label for="fullname">Nom complet</label>
+              <input id="fullname" name="fullname" type="text" required>
+            </div>
+            <div>
+              <label for="mail">Email</label>
+              <input id="mail" name="mail" type="email" required>
+            </div>
+            <div>
+              <label for="tel">Téléphone</label>
+              <input id="tel" name="tel" type="tel" pattern="^[0-9+ ]{8,16}$">
+            </div>
+            <div>
+              <label for="site">Site web</label>
+              <input id="site" name="site" type="url" placeholder="https://...">
+            </div>
+            <div>
+              <label for="date">Date souhaitée</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div>
+              <label for="time">Heure souhaitée</label>
+              <input id="time" name="time" type="time">
+            </div>
+            <div>
+              <label for="budget">Budget (MAD)</label>
+              <input id="budget" name="budget" type="number" min="1000" max="100000" step="500">
+            </div>
+            <div>
+              <label for="priority">Priorité</label>
+              <input id="priority" name="priority" type="range" min="1" max="5" value="3">
+            </div>
+            <div>
+              <label for="color">Couleur préférée</label>
+              <input id="color" name="color" type="color" value="#1e4bb8">
+            </div>
+            <div>
+              <label for="service">Service demandé</label>
+              <select id="service" name="service">
+                <option>Création de site</option>
+                <option>Refonte</option>
+                <option>Maintenance</option>
+              </select>
+            </div>
+          </div>
+
+          <p>Type de client</p>
+          <div class="inline-options">
+            <label><input type="radio" name="client-type" value="entreprise" checked>Entreprise</label>
+            <label><input type="radio" name="client-type" value="association">Association</label>
+            <label><input type="radio" name="client-type" value="particulier">Particulier</label>
+          </div>
+
+          <p>Besoin complémentaire</p>
+          <div class="inline-options">
+            <label><input type="checkbox" name="extra" value="seo">SEO</label>
+            <label><input type="checkbox" name="extra" value="photo">Photos</label>
+            <label><input type="checkbox" name="extra" value="hebergement">Hébergement</label>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+
+      <section class="section">
+        <h2>Coordonnées</h2>
+        <ul>
+          <li>Email: contact@novastudio.test</li>
+          <li>Téléphone: +212 6 12 34 56 78</li>
+          <li>Adresse: Avenue Hassan II, Casablanca</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Localisation</h2>
+        <iframe
+          title="Carte de localisation de Nova Studio"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-7.68%2C33.52%2C-7.53%2C33.62&layer=mapnik"
+          width="100%"
+          height="320"
+          loading="lazy"
+          style="border:1px solid #dbe2ef; border-radius: 8px;">
+        </iframe>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>Plan du site</strong>
+      <ul>
+        <li><a href="/tp3">Accueil</a></li>
+        <li><a href="/tp3/about.html">À propos</a></li>
+        <li><a href="/tp3/services.html">Services</a></li>
+        <li><a href="/tp3/gallery.html">Galerie</a></li>
+        <li><a href="/tp3/contact.html">Contact</a></li>
+      </ul>
+      <p>Mentions légales: site démonstration pédagogique, sans activité commerciale réelle.</p>
+    </div>
+  </footer>
+</body>
+</html>
