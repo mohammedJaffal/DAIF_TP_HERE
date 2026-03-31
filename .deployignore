@@ -1,0 +1,10 @@
+- /.git/**
+- /.gitignore
+- /.deployignore
+- /AGENTS.md
+- /.DS_Store
+- /**/.DS_Store
+- /**/README.md
+- /deploy_tps.sh
+- /publish_site.sh
+- /sync_site.sh

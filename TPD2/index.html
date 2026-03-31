@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="TPD2 - Solution pratique du TP CSS3 du chapitre 4 : selecteurs, box model, flexbox, grid, responsive, variables, transitions et animations."
+  >
+  <title>TPD2 | CSS3 Chapter 4</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero section-card">
+      <div class="hero-copy">
+        <p class="eyebrow">Technologies et Developpement Web</p>
+        <h1>TPD2 - Reponse au TP CSS3 du chapitre 4</h1>
+        <p>
+          Cette page regroupe des demos simples pour les notions vues en cours :
+          selecteurs, box model, flexbox, grid, responsive design, variables CSS,
+          transitions et animations.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#exercise-1">Voir les exercices</a>
+          <button class="button button-secondary" id="theme-toggle" type="button">Changer le theme</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="mini-stats">
+          <article>
+            <strong>8</strong>
+            <span>exercices couverts</span>
+          </article>
+          <article>
+            <strong>1</strong>
+            <span>page unique</span>
+          </article>
+          <article>
+            <strong>100%</strong>
+            <span>HTML, CSS, JS vanilla</span>
+          </article>
+        </div>
+      </div>
+    </header>
+
+    <nav class="section-card chapter-nav" aria-label="Navigation des exercices">
+      <a href="#exercise-1">1. Selecteurs</a>
+      <a href="#exercise-2">2. Box Model</a>
+      <a href="#exercise-3">3. Flexbox</a>
+      <a href="#exercise-4">4. Grid</a>
+      <a href="#exercise-5">5. Responsive</a>
+      <a href="#exercise-6">6. Variables</a>
+      <a href="#exercise-7">7. Animations</a>
+      <a href="#exercise-8">8. Quiz</a>
+    </nav>
+
+    <main class="content-stack">
+      <section class="section-card" id="exercise-1">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 1</p>
+          <h2>Selecteurs et specificite</h2>
+        </div>
+
+        <div class="exercise-grid">
+          <div>
+            <h3>Demo</h3>
+            <div class="selector-demo">
+              <nav class="main-nav-demo">
+                <ul>
+                  <li><a href="#exercise-1" class="active">Accueil</a></li>
+                  <li><a href="#exercise-4">A propos</a></li>
+                  <li><a href="#exercise-8">Contact</a></li>
+                </ul>
+              </nav>
+              <main class="posts-demo">
+                <article class="post featured">
+                  <h4>Premier article</h4>
+                  <p>Ce paragraphe est cible avec <code>.post p:first-of-type</code>.</p>
+                </article>
+                <article class="post">
+                  <h4>Deuxieme article</h4>
+                  <p>La classe <code>featured</code> ajoute un style special au premier article.</p>
+                </article>
+              </main>
+            </div>
+          </div>
+
+          <div>
+            <h3>Reponses</h3>
+            <ul class="answer-list">
+              <li><code>.main-nav-demo a</code> selectionne tous les liens dans la navigation.</li>
+              <li><code>.main-nav-demo .active</code> selectionne uniquement le lien actif.</li>
+              <li><code>.post.featured</code> selectionne l'article qui a la classe <code>featured</code>.</li>
+              <li><code>.post p:first-of-type</code> selectionne le premier paragraphe de chaque article.</li>
+              <li><code>.main-nav-demo li:nth-child(even)</code> selectionne les elements <code>li</code> pairs.</li>
+            </ul>
+
+            <h3>Specificite</h3>
+            <ol class="answer-list">
+              <li><code>p</code> &lt; <code>.text</code> &lt; <code>p.text</code> &lt; <code>#main</code> &lt; <code>#main .text p</code></li>
+              <li>Si deux regles ont la meme specificite, la derniere declaration gagne.</li>
+              <li>Il faut eviter <code>!important</code> car il casse la cascade naturelle et complique la maintenance.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-2">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 2</p>
+          <h2>Box Model et centrage</h2>
+        </div>
+
+        <div class="exercise-grid">
+          <div>
+            <h3>Comparaison</h3>
+            <div class="box-demo">
+              <div class="box box-content">
+                <strong>content-box</strong>
+                <span>Largeur visible: 350px</span>
+              </div>
+              <div class="box box-border">
+                <strong>border-box</strong>
+                <span>Largeur visible: 300px</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Reponses</h3>
+            <ul class="answer-list">
+              <li>Avec <code>content-box</code>, la largeur visible est <strong>350px</strong>.</li>
+              <li>Avec <code>border-box</code>, la largeur visible reste <strong>300px</strong>.</li>
+              <li>Reset conseille :</li>
+            </ul>
+            <pre><code>*, *::before, *::after {
+  box-sizing: border-box;
+}</code></pre>
+            <div class="center-stage">
+              <div class="centered-card">Element centre horizontalement et verticalement</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-3">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 3</p>
+          <h2>Flexbox</h2>
+        </div>
+
+        <div class="demo-navbar">
+          <div class="logo">MonSite</div>
+          <ul class="demo-nav-links">
+            <li><a href="#exercise-1">Accueil</a></li>
+            <li><a href="#exercise-4">Services</a></li>
+            <li><a href="#exercise-8">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="demo-cards">
+          <article class="demo-card">
+            <h3>Carte 1</h3>
+            <p>Contenu court.</p>
+            <a href="#exercise-4" class="card-link">En savoir plus</a>
+          </article>
+          <article class="demo-card">
+            <h3>Carte 2</h3>
+            <p>Contenu beaucoup plus long pour tester l'alignement vertical du lien en bas de chaque carte.</p>
+            <a href="#exercise-4" class="card-link">En savoir plus</a>
+          </article>
+          <article class="demo-card">
+            <h3>Carte 3</h3>
+            <p>Contenu moyen.</p>
+            <a href="#exercise-4" class="card-link">En savoir plus</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-4">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 4</p>
+          <h2>CSS Grid</h2>
+        </div>
+
+        <h3>Grille responsive</h3>
+        <div class="grid-cards-demo">
+          <div class="grid-card">Carte 1</div>
+          <div class="grid-card">Carte 2</div>
+          <div class="grid-card">Carte 3</div>
+          <div class="grid-card">Carte 4</div>
+          <div class="grid-card">Carte 5</div>
+          <div class="grid-card">Carte 6</div>
+        </div>
+
+        <h3>Layout avec Grid Areas</h3>
+        <div class="page-layout-demo">
+          <header class="header">Header</header>
+          <nav class="sidebar">Sidebar</nav>
+          <main class="main">Contenu principal</main>
+          <footer class="footer">Footer</footer>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-5">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 5</p>
+          <h2>Responsive Design</h2>
+        </div>
+
+        <p class="section-copy">
+          Cette section suit une approche mobile first. Sur mobile, le menu devient vertical
+          et la sidebar est cachee. A partir de 768px, la mise en page s'elargit. A partir de
+          992px, la grille passe en trois colonnes.
+        </p>
+
+        <div class="responsive-preview">
+          <div class="responsive-box">Bloc 1</div>
+          <div class="responsive-box">Bloc 2</div>
+          <div class="responsive-box">Bloc 3</div>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-6">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 6</p>
+          <h2>Variables CSS et themes</h2>
+        </div>
+
+        <div class="theme-grid">
+          <article class="theme-card">
+            <h3>Theme clair</h3>
+            <p>Variables definies dans <code>:root</code> pour le fond, le texte, la couleur principale et les cartes.</p>
+          </article>
+          <article class="theme-card">
+            <h3>Theme sombre</h3>
+            <p>Un attribut <code>data-theme="dark"</code> change les variables et applique une transition douce.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-7">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 7</p>
+          <h2>Transitions et animations</h2>
+        </div>
+
+        <div class="motion-row">
+          <button class="button animated-button" type="button">Bouton anime</button>
+          <div class="spinner" aria-label="Indicateur de chargement"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="exercise-8">
+        <div class="section-head">
+          <p class="eyebrow">Exercice 8</p>
+          <h2>Quiz de revision - reponses</h2>
+        </div>
+
+        <ul class="quiz-list">
+          <li><strong>1.</strong> <code>#header a</code> a la specificite la plus haute.</li>
+          <li><strong>2.</strong> Avec <code>box-sizing: border-box</code>, la largeur totale reste <strong>200px</strong>.</li>
+          <li><strong>3.</strong> Pour centrer avec Flexbox, il faut <code>justify-content: center</code> et <code>align-items: center</code>.</li>
+          <li><strong>4.</strong> <code>1fr</code> signifie 1 fraction de l'espace disponible.</li>
+          <li><strong>5.</strong> L'approche mobile first utilise des media queries en <code>min-width</code>.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
