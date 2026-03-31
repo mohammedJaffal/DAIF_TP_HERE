@@ -4,6 +4,8 @@
 - /AGENTS.md
 - /.DS_Store
 - /**/.DS_Store
+- /*.sh
+- /**/*.sh
 - /**/README.md
 - /deploy_tps.sh
 - /publish_site.sh
