@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TPD4 - Client HTTP minimaliste en JavaScript">
+  <title>TPD4 - Client HTTP minimaliste</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="small-title">TPD4</p>
+      <h1>Client HTTP minimaliste</h1>
+      <p class="intro">
+        Formulaire simple pour envoyer une requete HTTP et afficher le statut,
+        les headers et le corps de la reponse.
+      </p>
+    </header>
+
+    <section class="panel">
+      <form id="http-form" class="request-form">
+        <div class="top-row">
+          <select id="method" name="method" aria-label="Methode HTTP">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+
+          <input
+            id="url"
+            name="url"
+            type="url"
+            placeholder="https://jsonplaceholder.typicode.com/posts/1"
+            value="https://jsonplaceholder.typicode.com/posts/1"
+            required
+          >
+
+          <button type="submit" class="submit-btn">Envoyer</button>
+        </div>
+
+        <div id="headers-list" class="headers-list">
+          <div class="header-row">
+            <input type="text" class="header-key" placeholder="Header key">
+            <input type="text" class="header-value" placeholder="Header value">
+            <button type="button" class="remove-header" aria-label="Supprimer ce header">x</button>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button type="button" id="add-header" class="add-btn">+</button>
+        </div>
+
+        <label class="label" for="body">Body</label>
+        <textarea id="body" name="body" placeholder='{"title":"test"}'></textarea>
+      </form>
+    </section>
+
+    <section class="panel output-panel">
+      <div class="status-box">
+        <h2>Statut</h2>
+        <p id="status-text">Aucune requete envoyee.</p>
+      </div>
+
+      <div class="response-grid">
+        <div class="response-box">
+          <h2>Headers</h2>
+          <pre id="headers-output">Les headers de la reponse apparaitront ici.</pre>
+        </div>
+
+        <div class="response-box">
+          <h2>Response body</h2>
+          <pre id="body-output">Le corps de la reponse apparaitra ici.</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
